@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobs - RiseBoard</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <p class="logo">RiseBoard</p>
+
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="jobs.html" class="active">Jobs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="page-header">
+      <div class="container">
+        <h1>Browse Jobs &amp; Internships</h1>
+        <p>Live listings from Rise. Search and filter to find your fit.</p>
+      </div>
+    </section>
+
+    <!-- Search and filter -->
+    <section class="search-section" aria-label="Search and filter jobs">
+      <div class="container">
+        <div class="search-bar">
+
+          <label for="search-input" class="sr-only">Search jobs by keyword</label>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Search by title or company..."
+            aria-label="Search jobs by keyword"
+          />
+
+          <label for="type-filter" class="sr-only">Filter by job type</label>
+          <select id="type-filter" aria-label="Filter by job type">
+            <option value="">All Types</option>
+            <option value="Full-time">Full-time</option>
+            <option value="Part-time">Part-time</option>
+            <option value="Contract">Contract</option>
+            <option value="Hybrid">Hybrid</option>
+          </select>
+
+          <button id="reset-btn" class="btn btn-outline">Reset</button>
+
+        </div>
+        <p id="results-count" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Job listings -->
+    <section class="jobs-section">
+      <div class="container">
+
+        <div id="loading">
+          <div class="spinner" aria-hidden="true"></div>
+          <p>Loading jobs...</p>
+        </div>
+
+        <div id="error-box" hidden>
+          <p>⚠️ Could not load jobs. Please check your connection.</p>
+          <button id="retry-btn" class="btn">Try Again</button>
+        </div>
+
+        <div id="no-results" hidden>
+          <p>No jobs found. Try a different search or clear your filters.</p>
+        </div>
+
+        <div id="jobs-container" hidden></div>
+
+      </div>
+    </section>
+
+    <p class="attribution container">
+      Job data from <a href="https://joinrise.co" target="_blank" rel="noopener">Rise</a>.
+    </p>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 RiseBoard — Built by Your Name for ISYS3004.</p>
+      <p>Job data from <a href="https://joinrise.co" target="_blank" rel="noopener">Rise</a>.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/api.js"></script>
+</body>
+</html>

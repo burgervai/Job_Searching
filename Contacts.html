@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - RiseBoard</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <p class="logo">RiseBoard</p>
+
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="page-header">
+      <div class="container">
+        <h1>Contact</h1>
+        <p>Send a message or get in touch.</p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Contact details -->
+          <aside class="contact-info">
+            <h2>Get in Touch</h2>
+            <ul class="contact-list">
+              <li>
+                <strong>Email</strong>
+                <a href="mailto:yourname@student.curtin.edu.au">yourname@student.curtin.edu.au</a>
+              </li>
+              <li>
+                <strong>University</strong>
+                <span>Curtin University — ISYS3004</span>
+              </li>
+              <li>
+                <strong>GitHub</strong>
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a>
+              </li>
+            </ul>
+          </aside>
+
+          <!-- Contact form -->
+          <div class="contact-form-wrap">
+            <h2>Send a Message</h2>
+
+            <!-- Success message (shown after valid submit) -->
+            <div id="form-success" class="form-success" hidden>
+              <p>✅ Message sent! I'll get back to you soon.</p>
+            </div>
+
+            <div id="contact-form">
+
+              <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input type="text" id="name" placeholder="Your full name" />
+                <span id="name-error" class="field-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" placeholder="yourname@example.com" />
+                <span id="email-error" class="field-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message <span class="required">*</span></label>
+                <textarea id="message" rows="5" placeholder="Write your message..."></textarea>
+                <span id="message-error" class="field-error"></span>
+              </div>
+
+              <button type="button" id="submit-btn" class="btn">Send Message</button>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 RiseBoard — Built by Your Name for ISYS3004.</p>
+      <p>Job data from <a href="https://joinrise.co" target="_blank" rel="noopener">Rise</a>.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
