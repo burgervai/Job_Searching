@@ -1,8 +1,7 @@
 // main.js — RiseBoard
 // JS Feature 1: Mobile nav toggle
 // JS Feature 2: Dark/light theme switcher
-// JS Feature 3: Project card filter
-// + Contact form validation
+// JS Feature 3: Contact form validation
 
 // ----------------------------------------
 // Feature 1: Mobile Nav Toggle
@@ -63,50 +62,16 @@ function applyTheme(theme) {
 }
 
 // ----------------------------------------
-// Feature 3: Project Card Filter
-// ----------------------------------------
-function initProjectFilter() {
-  var buttons = document.querySelectorAll('.filter-btn');
-  var cards = document.querySelectorAll('.project-card');
-  var noProjects = document.querySelector('#no-projects');
-  if (!buttons.length) return;
-
-  buttons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var filter = btn.getAttribute('data-filter');
-
-      // Update active button
-      buttons.forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-
-      // Show or hide each card
-      var visible = 0;
-      cards.forEach(function (card) {
-        var category = card.getAttribute('data-category') || '';
-        if (filter === 'all' || category.includes(filter)) {
-          card.hidden = false;
-          visible++;
-        } else {
-          card.hidden = true;
-        }
-      });
-
-      // Show no-results message if nothing visible
-      if (noProjects) {
-        noProjects.hidden = visible > 0;
-      }
-    });
-  });
-}
-
-// ----------------------------------------
 // Contact Form Validation
 // ----------------------------------------
 function initContactForm() {
+  var form = document.querySelector('#contact-form');
   var submitBtn = document.querySelector('#submit-btn');
-  if (!submitBtn) return;
+  if (!form || !submitBtn) return;
 
-  submitBtn.addEventListener('click', function () {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    
     var nameField = document.querySelector('#name');
     var emailField = document.querySelector('#email');
     var msgField = document.querySelector('#message');
@@ -140,7 +105,7 @@ function initContactForm() {
 
     // If all valid, show success
     if (valid) {
-      document.querySelector('#contact-form').hidden = true;
+      form.hidden = true;
       document.querySelector('#form-success').hidden = false;
     }
   });
@@ -164,6 +129,5 @@ function clearError(field, errorId) {
 document.addEventListener('DOMContentLoaded', function () {
   initNavToggle();
   initTheme();
-  initProjectFilter();
   initContactForm();
 });
